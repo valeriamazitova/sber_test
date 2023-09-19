@@ -7,8 +7,8 @@ import java.util.List;
 
 /**
  * Represents a person with a name and age. A person may own a list of items.
- *
- * @author: Valeria Mazitova
+ * <p>
+ * Created by Valeria Mazitova.
  */
 
 @Entity
@@ -41,6 +41,9 @@ public class Person {
     @Cascade(org.hibernate.annotations.CascadeType.PERSIST)
     private List<Item> items;
 
+    /**
+     * Constructs a new Person object with no specified fields.
+     */
     public Person() {}
 
 

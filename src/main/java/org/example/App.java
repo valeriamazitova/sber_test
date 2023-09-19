@@ -15,11 +15,14 @@ import java.util.Collections;
 /**
  * This class demonstrates CRUD (Create, Read, Update, Delete) operations on Person and Item objects using Hibernate.
  * It includes database configuration, session management, and basic data manipulation.
- *
- * @author: Valeria Mazitova
+ * <p>
+ * Created by Valeria Mazitova.
  */
 public class App
 {
+    /**
+     * The logger instance for the application. It is used to log messages and track the execution flow.
+     */
     private static final Logger logger = LoggerFactory.getLogger(App.class);
 
     /**

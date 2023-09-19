@@ -5,8 +5,8 @@ import jakarta.persistence.*;
 /**
  * Represents an item with a unique identifier, item name, and an owner (a Person).
  * An item can be associated with a person who owns it.
- *
- * @author Valeria Mazitova
+ * <p>
+ * Created by Valeria Mazitova.
  */
 
 @Entity
