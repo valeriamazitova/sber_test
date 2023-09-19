@@ -6,25 +6,37 @@ import org.hibernate.annotations.Cascade;
 import java.util.List;
 
 /**
+ * Represents a person with a name and age. A person may own a list of items.
+ *
  * @author: Valeria Mazitova
  */
+
 @Entity
 @Table(name = "person")
-/**
- * Represents a person with a name and age. A person may own a list of items.
- */
 public class Person {
+    /**
+     * The unique identifier (ID) of the person.
+     */
     @Id
     @Column(name="id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
+    /**
+     * The name of the person.
+     */
     @Column(name = "name")
     private String name;
 
+    /**
+     * The age of the person.
+     */
     @Column(name = "age")
     private int age;
 
+    /**
+     * The list of purchased items by the Person.
+     */
     @OneToMany(mappedBy = "owner")
     @Cascade(org.hibernate.annotations.CascadeType.PERSIST)
     private List<Item> items;

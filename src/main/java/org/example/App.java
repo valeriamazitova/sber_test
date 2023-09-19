@@ -13,22 +13,23 @@ import java.util.ArrayList;
 import java.util.Collections;
 
 /**
+ * This class demonstrates CRUD (Create, Read, Update, Delete) operations on Person and Item objects using Hibernate.
+ * It includes database configuration, session management, and basic data manipulation.
+ *
  * @author: Valeria Mazitova
  */
 public class App
 {
-
     private static final Logger logger = LoggerFactory.getLogger(App.class);
 
     /**
-     * This is a program for performing CRUD operations on objects Person and Item
-     * @param args
+     * Entry point of the program for performing CRUD operations on Person and Item objects.
+     *
+     * @param args Command-line arguments (not used in this program).
      */
     public static void main( String[] args )
     {
-        /**
-         * Adding our annotated classes Person and Item to Hibernate configuration
-         */
+        // Adding our annotated classes Person and Item to Hibernate configuration
         Configuration configuration = new Configuration().addAnnotatedClass(Person.class)
                 .addAnnotatedClass(Item.class);
 
@@ -38,25 +39,19 @@ public class App
          */
         SessionFactory sessionFactory = configuration.buildSessionFactory();
 
-        /**
-         * Session opening and transaction begin
-         */
+        // Session opening and transaction begin
         try (sessionFactory) {
             Session session = sessionFactory.getCurrentSession();
             session.beginTransaction();
 
-            /**
-             * Reading info from our database
-             */
+            // Reading info from our database
             Person person = session.get(Person.class, 1);
             logger.info("read Person object from table: {}", person);
 
             Item item = session.get(Item.class, 1);
             logger.info("read Item object from table: {}", item);
 
-            /**
-             * Creating a record for the table
-             */
+            // Creating a record for the table
             Person person1 = new Person("test name", 25);
             Item item1 = new Item("test item for test person");
 
@@ -75,9 +70,7 @@ public class App
             person1.setName("Julia");
             logger.warn("updated Person was saved in the table: {}", person1);
 
-            /**
-             * Deleting a record from the table
-             */
+            // Deleting a record from the table
             Person person2 = session.get(Person.class, 3);
             session.remove(person2);
             logger.warn("a Person was removed from the table {}", person2);
