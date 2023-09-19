@@ -2,6 +2,9 @@ package org.example.model;
 
 import jakarta.persistence.*;
 
+/**
+ * @author: Valeria Mazitova
+ */
 @Entity
 @Table(name = "item")
 public class Item {

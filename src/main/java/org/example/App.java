@@ -9,33 +9,76 @@ import org.hibernate.cfg.Configuration;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import java.util.ArrayList;
+import java.util.Collections;
+
 /**
- * created by: Mazitova Valeria
- *
+ * @author: Valeria Mazitova
  */
 public class App
 {
+
     private static final Logger logger = LoggerFactory.getLogger(App.class);
 
+    /**
+     * This is a program for performing CRUD operations on objects Person and Item
+     * @param args
+     */
     public static void main( String[] args )
     {
+        /**
+         * Adding our annotated classes Person and Item to Hibernate configuration
+         */
         Configuration configuration = new Configuration().addAnnotatedClass(Person.class)
                 .addAnnotatedClass(Item.class);
 
+        /**
+         * Creating SessionFactory object that is responsible for creating and managing
+         * database connections
+         */
         SessionFactory sessionFactory = configuration.buildSessionFactory();
 
+        /**
+         * Session opening and transaction begin
+         */
         try (sessionFactory) {
             Session session = sessionFactory.getCurrentSession();
             session.beginTransaction();
 
-
-//            прочитать данные из таблицы
+            /**
+             * Reading info from our database
+             */
             Person person = session.get(Person.class, 1);
             logger.info("read Person object from table: {}", person);
 
             Item item = session.get(Item.class, 1);
             logger.info("read Item object from table: {}", item);
 
+            /**
+             * Creating an entity
+             */
+            Person person1 = new Person("test name", 25);
+            Item item1 = new Item("test item for test person");
+
+            person1.setItems(new ArrayList<>(Collections.singletonList(item1)));
+            item1.setOwner(person1);
+
+            logger.info("adding new Person to the table: {}", person1);
+            logger.info("adding new Item to the table: {}", item1);
+            session.persist(person1);
+
+            /**
+             * Updating an entity
+             * (there's no need to call session.persist(person1) because the object is
+             * in the persistent (managed) state
+             */
+            person1.setName("Julia");
+
+            /**
+             * Deleting an entity
+             */
+            Person person2 = session.get(Person.class, 3);
+            session.remove(person2);
 
             session.getTransaction().commit();
         }

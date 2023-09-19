@@ -5,6 +5,9 @@ import org.hibernate.annotations.Cascade;
 
 import java.util.List;
 
+/**
+ * @author: Valeria Mazitova
+ */
 @Entity
 @Table(name = "person")
 public class Person {
@@ -68,22 +71,42 @@ public class Person {
         this.name = name;
     }
 
+    /**
+     *
+     * @return
+     */
     public int getAge() {
         return age;
     }
 
+    /**
+     *
+     * @param age
+     */
     public void setAge(int age) {
         this.age = age;
     }
 
+    /**
+     *
+     * @return
+     */
     public List<Item> getItems() {
         return items;
     }
 
+    /**
+     *
+     * @param items
+     */
     public void setItems(List<Item> items) {
         this.items = items;
     }
 
+    /**
+     *
+     * @return
+     */
     @Override
     public String toString() {
         return "Person{" +
