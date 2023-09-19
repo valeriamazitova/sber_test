@@ -10,6 +10,9 @@ import java.util.List;
  */
 @Entity
 @Table(name = "person")
+/**
+ * Represents a person with a name and age. A person may own a list of items.
+ */
 public class Person {
     @Id
     @Column(name="id")
@@ -30,10 +33,10 @@ public class Person {
 
 
     /**
-     * Person constructor to create Person object
-     * and new Person record in the table
-     * @param name
-     * @param age
+     * Constructs a new Person object with the specified name and age.
+     *
+     * @param name The name of the person.
+     * @param age  The age of the person.
      */
     public Person(String name, int age) {
         this.name = name;
@@ -41,72 +44,81 @@ public class Person {
     }
 
     /**
-     * Get-method to access Person's id
-     * @returns Person's id
+     * Gets the unique identifier (ID) of the person.
+     *
+     * @return The ID of the person.
      */
     public int getId() {
         return id;
     }
 
     /**
-     * Sets new id for the Person object
-     * @param id integer value
+     * Sets the unique identifier (ID) of the person.
+     *
+     * @param id The new ID to set for the person.
      */
     public void setId(int id) {
         this.id = id;
     }
 
     /**
-     * Get-method to access Person's name
-     * @returns Person's name
+     * Gets the name of the person.
+     *
+     * @return The name of the person.
      */
     public String getName() {
         return name;
     }
 
     /**
-     * Sets new name for Person
-     * @param name
+     * Sets the name of the person.
+     *
+     * @param name The new name to set for the person.
      */
     public void setName(String name) {
         this.name = name;
     }
 
     /**
-     * Get-method to access Person's age
-     * @returns age
+     * Gets the age of the person.
+     *
+     * @return The age of the person.
      */
     public int getAge() {
         return age;
     }
 
     /**
+     * Sets the age of the person.
      *
-     * @param age < 100
+     * @param age The new age to set for the person.
      */
     public void setAge(int age) {
         this.age = age;
     }
 
     /**
-     * Get-method to access Person's item list
-     * @return
+     * Gets the items list of the person.
+     *
+     * @return The list of Items of the person.
      */
     public List<Item> getItems() {
         return items;
     }
 
     /**
+     * Sets the list of Items of the person.
      *
-     * @param items
+     * @param items The new items list to set for the person.
      */
     public void setItems(List<Item> items) {
         this.items = items;
     }
 
     /**
+     * Returns a string representation of the Person object.
      *
-     * @return
+     * @return A string in the format "Person{id=1, name='John', age=30}".
      */
     @Override
     public String toString() {
