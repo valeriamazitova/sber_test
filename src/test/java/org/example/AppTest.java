@@ -16,11 +16,19 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertNull;
 
+/**
+ * This JUnit test class verifies the CRUD (Create, Read, Update, Delete) operations
+ * for Person and Item objects using Hibernate.
+ * It tests the creation, reading, updating, and deletion of records in the database.
+ */
 public class AppTest {
 
     private SessionFactory sessionFactory;
     private Session session;
 
+    /**
+     * Sets up the Hibernate session and transaction before each test.
+     */
     @Before
     public void setUp() {
         Configuration configuration = new Configuration().addAnnotatedClass(Person.class)
@@ -30,6 +38,9 @@ public class AppTest {
         session.beginTransaction();
     }
 
+    /**
+     * Commits the transaction and closes the session after each test.
+     */
     @After
     public void tearDown() {
         if (session != null) {
@@ -41,6 +52,10 @@ public class AppTest {
         }
     }
 
+    /**
+     * Test case for creating and reading a Person and Item.
+     * It verifies that the created records can be read successfully.
+     */
     @Test
     public void testCreateAndRead() {
         // Create a new Person and Item
@@ -62,6 +77,10 @@ public class AppTest {
         assertEquals("Sample Item", retrievedItem.getItemName());
     }
 
+    /**
+     * Test case for updating a Person's name.
+     * It verifies that the Person's name can be successfully updated.
+     */
     @Test
     public void testUpdate() {
         // Create a new Person
@@ -79,6 +98,10 @@ public class AppTest {
         assertEquals("Updated John Doe", retrievedPerson.getName());
     }
 
+    /**
+     * Test case for deleting a Person.
+     * It verifies that a Person can be successfully deleted from the database.
+     */
     @Test
     public void testDelete() {
         // Create a new Person
