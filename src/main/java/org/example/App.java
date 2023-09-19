@@ -73,14 +73,19 @@ public class App
              * in the persistent (managed) state
              */
             person1.setName("Julia");
+            logger.warn("updated Person was saved in the table: {}", person1);
 
             /**
              * Deleting an entity
              */
             Person person2 = session.get(Person.class, 3);
             session.remove(person2);
+            logger.warn("a Person was removed from the table {}", person2);
 
             session.getTransaction().commit();
+        } catch (Exception e) {
+            logger.error("an error occurred", e);
+            throw e;
         }
     }
 }
