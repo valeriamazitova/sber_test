@@ -1,5 +1,4 @@
 # sber_test
-Implementation of CRUD-app.
 
 This is a Java project that demonstrates CRUD (Create, Read, Update, Delete) operations on `Person` and `Item` objects using Hibernate. It includes database configuration, session management, and basic data manipulation.
 
@@ -9,8 +8,8 @@ This is a Java project that demonstrates CRUD (Create, Read, Update, Delete) ope
 To run this project, you'll need the following prerequisites:
 
 - Java Development Kit (JDK)
-- Apache Maven (if you're using Maven as your build tool)
-- Hibernate and JPA dependencies (usually managed by the build tool)
+- Apache Maven
+- Hibernate
 - PostgreSQL
 - JUnit
 - Slf4j
