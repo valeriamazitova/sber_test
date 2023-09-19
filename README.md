@@ -27,5 +27,5 @@ To run this project, you'll need the following prerequisites:
     - start Postgres server
     - write in server configurations into hibernate.properties file
     - load initial data using start.sql file
-    - see the JavaDoc documentation
+    - see the JavaDoc documentation using `mvn javadoc:javadoc` command
     - run app and tests using `mvn clean install` command in the terminal
