@@ -30,7 +30,8 @@ public class Person {
 
 
     /**
-     *
+     * Person constructor to create Person object
+     * and new Person record in the table
      * @param name
      * @param age
      */
@@ -40,31 +41,31 @@ public class Person {
     }
 
     /**
-     *
-     * @return
+     * Get-method to access Person's id
+     * @returns Person's id
      */
     public int getId() {
         return id;
     }
 
     /**
-     *
-     * @param id
+     * Sets new id for the Person object
+     * @param id integer value
      */
     public void setId(int id) {
         this.id = id;
     }
 
     /**
-     *
-     * @return
+     * Get-method to access Person's name
+     * @returns Person's name
      */
     public String getName() {
         return name;
     }
 
     /**
-     *
+     * Sets new name for Person
      * @param name
      */
     public void setName(String name) {
@@ -72,8 +73,8 @@ public class Person {
     }
 
     /**
-     *
-     * @return
+     * Get-method to access Person's age
+     * @returns age
      */
     public int getAge() {
         return age;
@@ -81,14 +82,14 @@ public class Person {
 
     /**
      *
-     * @param age
+     * @param age < 100
      */
     public void setAge(int age) {
         this.age = age;
     }
 
     /**
-     *
+     * Get-method to access Person's item list
      * @return
      */
     public List<Item> getItems() {

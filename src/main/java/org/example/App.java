@@ -55,7 +55,7 @@ public class App
             logger.info("read Item object from table: {}", item);
 
             /**
-             * Creating an entity
+             * Creating a record for the table
              */
             Person person1 = new Person("test name", 25);
             Item item1 = new Item("test item for test person");
@@ -68,7 +68,7 @@ public class App
             session.persist(person1);
 
             /**
-             * Updating an entity
+             * Updating previously created record
              * (there's no need to call session.persist(person1) because the object is
              * in the persistent (managed) state
              */
@@ -76,7 +76,7 @@ public class App
             logger.warn("updated Person was saved in the table: {}", person1);
 
             /**
-             * Deleting an entity
+             * Deleting a record from the table
              */
             Person person2 = session.get(Person.class, 3);
             session.remove(person2);
