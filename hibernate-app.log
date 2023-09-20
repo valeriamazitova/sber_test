@@ -289,3 +289,109 @@
 [02:31:21, 645] INFO [org.hibernate.orm.connections.pooling: 362] HHH10001115: Connection pool size: 20 (min=1)
 [02:31:21, 658] WARN [org.hibernate.orm.deprecation: 152] HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
 [02:31:21, 729] INFO [org.hibernate.orm.connections.pooling: 604] HHH10001008: Cleaning up connection pool [jdbc:postgresql://localhost:5432/postgres]
+[09:12:18, 867] INFO [org.hibernate.Version: 44] HHH000412: Hibernate ORM core version 6.3.0.Final
+[09:12:18, 874] INFO [org.hibernate.cfg.Environment: 148] HHH000205: Loaded properties from resource hibernate.properties: {hibernate.dialect=org.hibernate.dialect.PostgreSQLDialect, hibernate.driver_class=org.postgresql.Driver, hibernate.connection.password=****, hibernate.connection.username=postgres, hibernate.connection.url=jdbc:postgresql://localhost:5432/postgres, hibernate.show_sql=true, hibernate.current_session_context_class=thread}
+[09:12:19, 031] INFO [org.hibernate.cache.internal.RegionFactoryInitiator: 50] HHH000026: Second-level cache disabled
+[09:12:19, 306] WARN [org.hibernate.orm.connections.pooling: 80] HHH10001002: Using built-in connection pool (not intended for production use)
+[09:12:19, 356] INFO [org.hibernate.orm.connections.pooling: 135] HHH10001005: Loaded JDBC driver class: org.postgresql.Driver
+[09:12:19, 357] INFO [org.hibernate.orm.connections.pooling: 157] HHH10001012: Connecting with JDBC URL [jdbc:postgresql://localhost:5432/postgres]
+[09:12:19, 357] INFO [org.hibernate.orm.connections.pooling: 166] HHH10001001: Connection properties: {password=****, user=postgres}
+[09:12:19, 358] INFO [org.hibernate.orm.connections.pooling: 170] HHH10001003: Autocommit mode: false
+[09:12:19, 362] INFO [org.hibernate.orm.connections.pooling: 362] HHH10001115: Connection pool size: 20 (min=1)
+[09:12:19, 563] WARN [org.hibernate.orm.deprecation: 152] HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+[09:12:21, 269] INFO [org.example.App: 52] read Person object from table: Person{id=1, name='Tom', age=35}
+[09:12:21, 279] INFO [org.example.App: 55] read Item object from table: Item{id=1, itemName='book', owner=Person{id=1, name='Tom', age=35}}
+[09:12:21, 279] INFO [org.example.App: 64] adding new Person to the table: Person{id=0, name='test name', age=25}
+[09:12:21, 279] INFO [org.example.App: 65] adding new Item to the table: Item{id=0, itemName='test item for test person', owner=Person{id=0, name='test name', age=25}}
+[09:12:21, 325] WARN [org.example.App: 74] updated Person was saved in the table: Person{id=35, name='Julia', age=25}
+[09:12:21, 331] INFO [org.hibernate.orm.connections.pooling: 604] HHH10001008: Cleaning up connection pool [jdbc:postgresql://localhost:5432/postgres]
+[09:12:21, 335] ERROR [org.hibernate.orm.connections.pooling: 466] Connection leak detected: there are 1 unclosed connections upon shutting down pool jdbc:postgresql://localhost:5432/postgres
+[09:12:21, 338] ERROR [org.hibernate.orm.connections.pooling: 297] Connection leak detected: there are 1 unclosed connections
+[09:12:21, 339] ERROR [org.example.App: 83] an error occurred
+java.lang.IllegalArgumentException: attempt to create delete event with null entity
+	at org.hibernate.event.spi.DeleteEvent.<init>(DeleteEvent.java:31)
+	at org.hibernate.internal.SessionImpl.delete(SessionImpl.java:903)
+	at org.hibernate.internal.SessionImpl.remove(SessionImpl.java:2383)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.hibernate.context.internal.ThreadLocalSessionContext$TransactionProtectionWrapper.invoke(ThreadLocalSessionContext.java:343)
+	at jdk.proxy2/jdk.proxy2.$Proxy44.remove(Unknown Source)
+	at org.example.App.main(App.java:78)
+[09:13:02, 059] INFO [org.hibernate.Version: 44] HHH000412: Hibernate ORM core version 6.3.0.Final
+[09:13:02, 063] INFO [org.hibernate.cfg.Environment: 148] HHH000205: Loaded properties from resource hibernate.properties: {hibernate.dialect=org.hibernate.dialect.PostgreSQLDialect, hibernate.driver_class=org.postgresql.Driver, hibernate.connection.password=****, hibernate.connection.username=postgres, hibernate.connection.url=jdbc:postgresql://localhost:5432/postgres, hibernate.show_sql=true, hibernate.current_session_context_class=thread}
+[09:13:02, 144] INFO [org.hibernate.cache.internal.RegionFactoryInitiator: 50] HHH000026: Second-level cache disabled
+[09:13:02, 346] WARN [org.hibernate.orm.connections.pooling: 80] HHH10001002: Using built-in connection pool (not intended for production use)
+[09:13:02, 382] INFO [org.hibernate.orm.connections.pooling: 135] HHH10001005: Loaded JDBC driver class: org.postgresql.Driver
+[09:13:02, 382] INFO [org.hibernate.orm.connections.pooling: 157] HHH10001012: Connecting with JDBC URL [jdbc:postgresql://localhost:5432/postgres]
+[09:13:02, 383] INFO [org.hibernate.orm.connections.pooling: 166] HHH10001001: Connection properties: {password=****, user=postgres}
+[09:13:02, 383] INFO [org.hibernate.orm.connections.pooling: 170] HHH10001003: Autocommit mode: false
+[09:13:02, 388] INFO [org.hibernate.orm.connections.pooling: 362] HHH10001115: Connection pool size: 20 (min=1)
+[09:13:02, 541] WARN [org.hibernate.orm.deprecation: 152] HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+[09:13:03, 914] INFO [org.example.App: 52] read Person object from table: Person{id=1, name='Tom', age=35}
+[09:13:03, 924] INFO [org.example.App: 55] read Item object from table: Item{id=1, itemName='book', owner=Person{id=1, name='Tom', age=35}}
+[09:13:03, 938] INFO [org.example.App: 64] adding new Person to the table: Person{id=0, name='test name', age=25}
+[09:13:03, 939] INFO [org.example.App: 65] adding new Item to the table: Item{id=0, itemName='test item for test person', owner=Person{id=0, name='test name', age=25}}
+[09:13:03, 972] WARN [org.example.App: 74] updated Person was saved in the table: Person{id=36, name='Julia', age=25}
+[09:13:03, 977] INFO [org.hibernate.orm.connections.pooling: 604] HHH10001008: Cleaning up connection pool [jdbc:postgresql://localhost:5432/postgres]
+[09:13:03, 980] ERROR [org.hibernate.orm.connections.pooling: 466] Connection leak detected: there are 1 unclosed connections upon shutting down pool jdbc:postgresql://localhost:5432/postgres
+[09:13:03, 983] ERROR [org.hibernate.orm.connections.pooling: 297] Connection leak detected: there are 1 unclosed connections
+[09:13:03, 984] ERROR [org.example.App: 83] an error occurred
+java.lang.IllegalArgumentException: attempt to create delete event with null entity
+	at org.hibernate.event.spi.DeleteEvent.<init>(DeleteEvent.java:31)
+	at org.hibernate.internal.SessionImpl.delete(SessionImpl.java:903)
+	at org.hibernate.internal.SessionImpl.remove(SessionImpl.java:2383)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.hibernate.context.internal.ThreadLocalSessionContext$TransactionProtectionWrapper.invoke(ThreadLocalSessionContext.java:343)
+	at jdk.proxy2/jdk.proxy2.$Proxy44.remove(Unknown Source)
+	at org.example.App.main(App.java:78)
+[09:14:13, 332] INFO [org.hibernate.Version: 44] HHH000412: Hibernate ORM core version 6.3.0.Final
+[09:14:13, 335] INFO [org.hibernate.cfg.Environment: 148] HHH000205: Loaded properties from resource hibernate.properties: {hibernate.dialect=org.hibernate.dialect.PostgreSQLDialect, hibernate.driver_class=org.postgresql.Driver, hibernate.connection.password=****, hibernate.connection.username=postgres, hibernate.connection.url=jdbc:postgresql://localhost:5432/postgres, hibernate.show_sql=true, hibernate.current_session_context_class=thread}
+[09:14:13, 421] INFO [org.hibernate.cache.internal.RegionFactoryInitiator: 50] HHH000026: Second-level cache disabled
+[09:14:13, 585] WARN [org.hibernate.orm.connections.pooling: 80] HHH10001002: Using built-in connection pool (not intended for production use)
+[09:14:13, 618] INFO [org.hibernate.orm.connections.pooling: 135] HHH10001005: Loaded JDBC driver class: org.postgresql.Driver
+[09:14:13, 618] INFO [org.hibernate.orm.connections.pooling: 157] HHH10001012: Connecting with JDBC URL [jdbc:postgresql://localhost:5432/postgres]
+[09:14:13, 619] INFO [org.hibernate.orm.connections.pooling: 166] HHH10001001: Connection properties: {password=****, user=postgres}
+[09:14:13, 619] INFO [org.hibernate.orm.connections.pooling: 170] HHH10001003: Autocommit mode: false
+[09:14:13, 623] INFO [org.hibernate.orm.connections.pooling: 362] HHH10001115: Connection pool size: 20 (min=1)
+[09:14:13, 775] WARN [org.hibernate.orm.deprecation: 152] HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+[09:14:15, 082] INFO [org.example.App: 52] read Person object from table: Person{id=1, name='Tom,', age=35}
+[09:14:15, 092] INFO [org.example.App: 55] read Item object from table: Item{id=1, itemName='book', owner=Person{id=1, name='Tom,', age=35}}
+[09:14:15, 093] INFO [org.example.App: 64] adding new Person to the table: Person{id=0, name='test name', age=25}
+[09:14:15, 093] INFO [org.example.App: 65] adding new Item to the table: Item{id=0, itemName='test item for test person', owner=Person{id=0, name='test name', age=25}}
+[09:14:15, 127] WARN [org.example.App: 74] updated Person was saved in the table: Person{id=4, name='Julia', age=25}
+[09:14:15, 132] WARN [org.example.App: 79] a Person was removed from the table Person{id=3, name='Kate', age=14}
+[09:14:15, 171] INFO [org.hibernate.orm.connections.pooling: 604] HHH10001008: Cleaning up connection pool [jdbc:postgresql://localhost:5432/postgres]
+[09:15:35, 591] INFO [org.hibernate.Version: 44] HHH000412: Hibernate ORM core version 6.3.0.Final
+[09:15:35, 597] INFO [org.hibernate.cfg.Environment: 148] HHH000205: Loaded properties from resource hibernate.properties: {hibernate.dialect=org.hibernate.dialect.PostgreSQLDialect, hibernate.driver_class=org.postgresql.Driver, hibernate.connection.password=****, hibernate.connection.username=postgres, hibernate.connection.url=jdbc:postgresql://localhost:5432/postgres, hibernate.show_sql=true, hibernate.current_session_context_class=thread}
+[09:15:35, 699] INFO [org.hibernate.cache.internal.RegionFactoryInitiator: 50] HHH000026: Second-level cache disabled
+[09:15:35, 876] WARN [org.hibernate.orm.connections.pooling: 80] HHH10001002: Using built-in connection pool (not intended for production use)
+[09:15:35, 903] INFO [org.hibernate.orm.connections.pooling: 135] HHH10001005: Loaded JDBC driver class: org.postgresql.Driver
+[09:15:35, 904] INFO [org.hibernate.orm.connections.pooling: 157] HHH10001012: Connecting with JDBC URL [jdbc:postgresql://localhost:5432/postgres]
+[09:15:35, 904] INFO [org.hibernate.orm.connections.pooling: 166] HHH10001001: Connection properties: {password=****, user=postgres}
+[09:15:35, 905] INFO [org.hibernate.orm.connections.pooling: 170] HHH10001003: Autocommit mode: false
+[09:15:35, 908] INFO [org.hibernate.orm.connections.pooling: 362] HHH10001115: Connection pool size: 20 (min=1)
+[09:15:36, 085] WARN [org.hibernate.orm.deprecation: 152] HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+[09:15:37, 354] INFO [org.hibernate.orm.connections.pooling: 604] HHH10001008: Cleaning up connection pool [jdbc:postgresql://localhost:5432/postgres]
+[09:15:37, 361] INFO [org.hibernate.cache.internal.RegionFactoryInitiator: 50] HHH000026: Second-level cache disabled
+[09:15:37, 363] WARN [org.hibernate.orm.connections.pooling: 80] HHH10001002: Using built-in connection pool (not intended for production use)
+[09:15:37, 364] INFO [org.hibernate.orm.connections.pooling: 135] HHH10001005: Loaded JDBC driver class: org.postgresql.Driver
+[09:15:37, 364] INFO [org.hibernate.orm.connections.pooling: 157] HHH10001012: Connecting with JDBC URL [jdbc:postgresql://localhost:5432/postgres]
+[09:15:37, 365] INFO [org.hibernate.orm.connections.pooling: 166] HHH10001001: Connection properties: {password=****, user=postgres}
+[09:15:37, 365] INFO [org.hibernate.orm.connections.pooling: 170] HHH10001003: Autocommit mode: false
+[09:15:37, 365] INFO [org.hibernate.orm.connections.pooling: 362] HHH10001115: Connection pool size: 20 (min=1)
+[09:15:37, 377] WARN [org.hibernate.orm.deprecation: 152] HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+[09:15:37, 460] INFO [org.hibernate.orm.connections.pooling: 604] HHH10001008: Cleaning up connection pool [jdbc:postgresql://localhost:5432/postgres]
+[09:15:37, 464] INFO [org.hibernate.cache.internal.RegionFactoryInitiator: 50] HHH000026: Second-level cache disabled
+[09:15:37, 466] WARN [org.hibernate.orm.connections.pooling: 80] HHH10001002: Using built-in connection pool (not intended for production use)
+[09:15:37, 467] INFO [org.hibernate.orm.connections.pooling: 135] HHH10001005: Loaded JDBC driver class: org.postgresql.Driver
+[09:15:37, 467] INFO [org.hibernate.orm.connections.pooling: 157] HHH10001012: Connecting with JDBC URL [jdbc:postgresql://localhost:5432/postgres]
+[09:15:37, 467] INFO [org.hibernate.orm.connections.pooling: 166] HHH10001001: Connection properties: {password=****, user=postgres}
+[09:15:37, 468] INFO [org.hibernate.orm.connections.pooling: 170] HHH10001003: Autocommit mode: false
+[09:15:37, 468] INFO [org.hibernate.orm.connections.pooling: 362] HHH10001115: Connection pool size: 20 (min=1)
+[09:15:37, 480] WARN [org.hibernate.orm.deprecation: 152] HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+[09:15:37, 552] INFO [org.hibernate.orm.connections.pooling: 604] HHH10001008: Cleaning up connection pool [jdbc:postgresql://localhost:5432/postgres]

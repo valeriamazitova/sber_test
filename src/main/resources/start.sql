@@ -10,10 +10,11 @@ create table Item(
                      item_name varchar(100) not null
 );
 
-drop table Person;
+drop table Person cascade;
+drop table Item cascade;
 
 insert into Person (name, age)
-values ('Tom,', 35),
+values ('Tom', 35),
        ('Bob', 52),
        ('Kate', 14);
 
